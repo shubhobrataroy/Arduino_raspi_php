@@ -11,15 +11,14 @@ void loop()
 {
 
 	while (Serial.available()){
-		int swt = Serial.parseInt();
-
-		Serial.println(swt);
-
-		if (swt == 1)
+		String swt = Serial.readString();
+    
+		if (swt == "1")
 			digitalWrite(3, HIGH);
 
 		else
 			digitalWrite(3, LOW);
+    
 	}
 }
 
