@@ -1,0 +1,25 @@
+
+<head>
+<script>
+    function switch1(sw) {
+
+        var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange= function () {
+                if(xhttp.readyState==4)
+                {
+                    alert("The Light is turned "+sw);
+                }
+            }
+            xhttp.open("GET",'switch.php?switch='+sw,true);
+            xhttp.send();
+        
+    }
+</script>
+</head>
+
+
+<body>
+
+<input type="button" value="Turn On" onclick=switch1('on') />
+<input type="button" value="Turn Off" onclick=switch1('off') />
+</body>
